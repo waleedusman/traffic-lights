@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    // facilitates creating an executable JVM application
+    // implicit plugins: java, distribution
+    id 'application'
 }
 
 group 'com.waleedusman'
@@ -16,6 +19,17 @@ dependencies {
 
     testCompile 'junit:junit:4.12',
             'org.mockito:mockito-all:1.10.19'
+}
+
+mainClassName = 'com.example.TrafficLightSimulator'
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile { it.getName() }.join(' '),
+                'Main-Class': 'com.example.TrafficLightSimulator'
+        )
+    }
 }
 
 test {
