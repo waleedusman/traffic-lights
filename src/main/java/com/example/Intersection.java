@@ -12,7 +12,7 @@ class Intersection {
     private Set<TrafficLight> northSouth;
     private Set<TrafficLight> eastWest;
 
-    private ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+    private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
     public Intersection() {
         northSouth = newHashSet(new TrafficLight("N"), new TrafficLight("S"));
