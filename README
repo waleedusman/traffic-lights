@@ -1,0 +1,12 @@
+Pre-requisites
+- Java 8
+- gradle 3.3
+
+In a terminal (assuming macOS), type:
+```
+gradle build
+```
+
+This will compile the code and run the unit tests.
+
+See ${projectDir}/build/ for all build output (i.e. *.class, JAR file, junit test report).
