@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/waleedusman/traffic-lights.svg?branch=master)](https://travis-ci.org/waleedusman/traffic-lights)
 
 An application that simulates a set of traffic lights at an intersection.
 
