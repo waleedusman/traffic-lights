@@ -14,7 +14,7 @@ Download the latest release and execute, e.g.
 java -jar traffic-light-sim-1.0.jar
 ```
 
-The simulation will run for 30 minutes.
+The simulation will run until forcibly exited.
 
 ## Build & Run
 In a terminal (assuming macOS), type:

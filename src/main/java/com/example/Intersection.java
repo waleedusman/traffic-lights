@@ -27,10 +27,12 @@ class Intersection {
         return eastWest;
     }
 
+    // 'northSouth' set always switched to green first
     public void open() {
         transition(northSouth, eastWest);
     }
 
+    // The intersection orchestrates the sets of traffic-lights
     private void transition(Set<TrafficLight> active, Set<TrafficLight> next) {
         active.parallelStream().forEach(TrafficLight::changeState);
         State newState = active.stream().findFirst().get().getState();
