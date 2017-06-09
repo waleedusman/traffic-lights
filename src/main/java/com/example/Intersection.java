@@ -32,9 +32,9 @@ class Intersection {
     }
 
     private void transition(Set<TrafficLight> active, Set<TrafficLight> next) {
-        active.forEach(TrafficLight::changeState);
+        active.parallelStream().forEach(TrafficLight::changeState);
         State newState = active.stream().findFirst().get().getState();
-        if (active.stream().findFirst().get().getState().equals(STOP)) {
+        if (newState.equals(STOP)) {
             executor.schedule(() -> transition(next, active), newState.durationSeconds(), SECONDS);
         } else {
             executor.schedule(() -> transition(active, next), newState.durationSeconds(), SECONDS);
