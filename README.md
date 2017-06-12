@@ -4,6 +4,16 @@ An application that simulates a set of traffic lights at an intersection.
 
 The traffic lights are designated (N, S) and (E, W) like a compass. When switching from green to red, the yellow light must be displayed for 30 seconds prior to it switching to red. The lights will change automatically every 5 minutes.
 
+## Design Notes
+I have chosen an **Intersection** to represent a set of lights and encapsulate the orchestration of changing those lights. When created, an **Intersection** has four RED lights. Once it has been *opened* the lights alternate their colours in the desired fashion. 
+
+A **TrafficLight** can be in one of three **State**s. Each **State** has three properties that define it; a *colour*, a scheduled *duration* (i.e. how long to wait until the next transition), and the *next state* (i.e. ordering of states is fixed).
+
+#### Thoughts after completing my initial implementation:
+* There should be a grace period between transitions. How should this affect the duration a colour is visible?
+* Instead of changing colours on each light separately I should have modelled a circuit that two lights could share.
+* Instead of having fixed states, a traffic-light only needs a fixed range of colours. What colour to set and when to set it can be managed by a traffic controller.
+
 ## Pre-requisites
 - Java 8
 - gradle 3.3
